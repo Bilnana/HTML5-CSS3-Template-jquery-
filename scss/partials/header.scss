@@ -1,0 +1,321 @@
+#header{
+    text-transform: uppercase;
+    position: relative;
+
+    //**Top navigation with login and contact
+    .top-nav{
+        height:45px;
+        font-family: 'Lato-Bold';
+        @include clearfix;
+        position: relative;
+         ul{
+             position: absolute;
+             bottom:0;
+             right:0;
+             margin:0;
+         }
+         li{
+             display: inline-block;
+             margin-right: 20px;
+         }
+         a{
+             font-size: 10px;
+             transition: 0.3s ease-in-out;
+             @include link;
+         }
+         a:hover{
+            @include link-hover;
+        }
+    }
+
+    //**Main navigation
+    .main-nav{
+        text-align: center;
+        position: relative;
+        @include clearfix;
+        h1{
+            margin:0;
+            a{
+                letter-spacing: 2px;
+                font-family: 'Lato-Bold';
+                cursor: pointer;
+            }
+            a:hover{
+                color:$red;
+            }
+        }
+        //**Main ul list,main navigation
+        .main-list{
+            padding:0;
+            margin: auto 0;
+            position: relative;
+            li{
+                display: inline-block;
+                margin: 0 16px;
+                padding: 40px 0;
+                transition:  0.3s ease-in-out;
+                a{
+                    font-size: 11px;
+                    font-family: 'Lato-Bold';
+                    line-height: 1.2;
+                    letter-spacing: 2px;
+                    @include link;
+                }
+            }
+            li:hover{
+                border-bottom: 4px solid $red;
+                padding-bottom: 36px;
+                cursor: pointer;
+                a{
+                    color:$red;
+                }
+            }
+            .item-drop{
+                border-bottom: none;
+                padding-bottom: 0;
+                transition: 0.3s ease-in-out;
+                cursor: pointer;
+                .drop-down{
+                    display: none;
+                }
+                
+            }
+           
+            //**Drop down menu on hover, focus
+            .item-drop:hover{
+                .drop-down{
+                    display: block;
+                    width:100%;
+                    background-color:$white;
+                    padding:0;
+                    position: absolute;
+                    left: 0;
+                    right:0;
+                    top:99px;
+                    z-index: 100;
+                    box-shadow: 0 1px 2px rgba(86, 86, 90, 0.5);
+                   
+                    .drop-down-content{
+                        width:75%;
+                        margin: 30px auto;
+                        @include clearfix;
+                
+                    li{
+                        display: inline-block;
+                        float: left;
+                        margin: 0 15px;
+                        padding:  0;
+                        text-align: left;
+                        a{
+                            font-size: 11px;
+                            font-family: 'Lato-Bold';
+                            line-height: 1.2;
+                            letter-spacing: 2px;
+                            @include link;
+                            transition: border-width 0.3s linear;
+                        }
+                        a:hover{
+                            color: $red;
+                        }
+                    }
+                    li:hover{
+                        border-bottom: none;
+                        padding-bottom: 0;
+                    }
+                .last{
+                        display: block;
+                    }
+                
+                    img{
+                        display: block;
+                        float: right;
+                        margin-top:20px;
+                    }
+                }
+                
+                //** List in drop down content
+                .list-content{
+                    padding:0;
+                    display:block;
+                    li{
+                        display: block;
+                        float: none;
+                        margin: 15px 0;
+                        padding:  0;
+                        text-align: left;
+                        a{
+                            font-size: 11px;
+                            font-family: 'Lato-Bold';
+                            line-height: 1.2;
+                            letter-spacing: 2px;
+                            text-transform: capitalize;
+                            @include link;
+                            transition: border-width 0.3s linear;
+                        }
+                        a:hover{
+                            color: $grey;
+                        }
+                    }
+                    li:hover{
+                        border-bottom: none;
+                        padding-bottom: 0;
+                    }
+                } 
+            }
+        }
+    }        
+}
+}  
+
+
+
+//**RESPONSIVE
+@media (max-width: 767px) and (min-width: 320px) {
+    #header{
+        //**Top navigation with login and contact
+        .top-nav{
+            display: none;
+        }
+    
+        //**Main navigation
+        .main-nav{
+            text-align: center;
+            position: relative;
+            @include clearfix;
+            height: 60px;
+            h1{
+                width: 75%;
+                float: right;
+                margin-top: 15px;
+                margin-right:20px;
+                text-align: center;
+            }
+            //**Main ul list,main navigation
+            .main-list{
+                display: none;
+            }
+            .main-list.mobile{
+                padding-top:60px;
+                margin: auto 0;
+                position: absolute;
+                top:60px;
+                left:0;
+                right:0;
+                background-color:$white;
+                z-index:200;
+                li{
+                    display: block;
+                    margin: 0;
+                    padding: 20px 10px;
+                    transition:  0.3s ease-in-out;
+                    border-bottom: 1px solid $lightGrey;
+                    a{
+                        font-size: 14px;
+                        letter-spacing: 3px;
+                    }
+                    a:hover{
+                        color:$orange;
+                    }
+                }
+                li:hover{
+                    border-bottom: 1px solid $lightGrey;
+                }
+              
+ 
+                //** MOBILE Drop down menu on hover, focus
+                .item-drop{
+                    display: block;
+                    margin: 0;
+                    position: relative;
+                    top:0;
+                    padding: 20px 10px;
+                    transition:  0.3s ease-in-out;
+                    border-bottom: 1px solid $lightGrey;
+                    z-index:200;
+                    a{
+                        font-size: 14px;
+                        letter-spacing: 3px;
+                    }
+                    .drop-down{
+                        display: none;
+                    }
+                    .drop-down.active{
+                        width:100%;
+                        background-color:$white;
+                        padding: 0;
+                        margin:0;
+                        position: relative;
+                        z-index: 300;
+                        box-shadow: none;
+                       
+                        .drop-down-content{
+                            width:100%;
+                            margin: 0 ;
+                            @include clearfix;
+                            position: relative;
+                    
+                        li{
+                            display: block;
+                            float: none;
+                            margin: 0 ;
+                            padding: 20px 0;
+                            text-align: center;
+                            border: none;
+                            a{
+                                font-size: 14px;
+                                letter-spacing: 3px;
+                                color:$grey;
+                            }
+                            a:hover{
+                                color: $red;
+                            }
+                        }
+                        
+                        li:hover ,li:active{
+                            border-bottom: none;
+                            padding-bottom: 0;
+                        }
+                    
+                        img{
+                            display: none;
+                        }
+                    }
+                    .list-content{
+                        display: none;
+                    }
+                    //**ul  List in drop down content
+                    .list-content.active{
+                        padding:0;
+                        margin:0;
+                       // display:block;
+                        position: relative;
+                        background-color:$white;
+                        z-index:300;
+                        top: 0;
+                        li{
+                            display: block;
+                            float: none;
+                            margin:  0;
+                            padding:20px  0;
+                            text-align: center;
+                            position: relative;
+                            a{
+                                font-size: 14px;
+                                letter-spacing: 3px;
+
+                            }
+                            a:hover{
+                                color: $grey;
+                            }
+                        }
+                        li:hover{
+                            // border-bottom: none;
+                            // padding-bottom: 0;
+                        }
+                    } 
+                }
+            }
+        }        
+    }
+    }  
+}

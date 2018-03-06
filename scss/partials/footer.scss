@@ -1,0 +1,58 @@
+footer{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid $lightGrey;
+    @include clearfix;
+    p{
+        width:calc(100% / 2);
+        display: inline;
+        float: left;
+        margin:0;
+        font-size: 12px;
+        letter-spacing: 2.5px;
+        color:$lightGrey;
+    }
+    .newsletter{
+        width:calc(100% / 2);
+        display: inline-block;
+        text-align: right;
+        label{
+            text-transform: uppercase;
+            display: block;
+            font-size: 12px;
+            letter-spacing: 2.5px;
+            font-family: 'Lato-Bold';
+        }
+        .go{
+            color: $white;
+            background-color: $black;
+            border: none;
+            padding: 3px 11px;
+            transition: 0.5s ease-in-out;
+            cursor: pointer;
+        }
+        .go:hover{
+            background-color: $grey; 
+        }
+    }
+}
+
+
+//**Responsive
+@media (max-width: 768px) and (min-width: 320px) {
+    footer{
+        p{
+            width:100%;
+            display: block;
+            float: none;
+            margin-top:20px;
+            text-align: center;
+        }
+        .newsletter{
+            margin-top:20px;
+            width:100%;
+            display:block;
+            text-align: center;
+        }
+    }
+}

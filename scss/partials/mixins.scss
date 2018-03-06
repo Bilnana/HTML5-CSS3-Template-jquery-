@@ -1,0 +1,46 @@
+//** Clearfix
+@mixin clearfix {
+	zoom: 1;
+
+	&:before,
+	&:after {
+		content: "\0020";
+		display: block;
+		height: 0;
+		overflow: hidden;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+//**Link
+@mixin link{
+    text-decoration: none;
+    color:$black;
+}
+
+//**Link hover
+@mixin link-hover{
+    color: #ff9933;
+}
+
+//**h1 content
+@mixin h1-content{
+	text-align: left;
+	font-family: 'Lato-Light';
+	font-size:22px;
+	color:$grey;
+	letter-spacing: 10px;
+	text-transform: uppercase;
+	margin-top:0;
+}
+
+//**h3 description
+@mixin h3-content{
+	font-size:16px;
+	font-family: 'Lato-Light';
+	text-transform: uppercase;
+	letter-spacing: 5px;
+}

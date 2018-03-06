@@ -1,0 +1,28 @@
+#login label {
+  display: block;
+  margin: 0px 0px 15px 0px;
+  font-weight: bold; }
+  #login label span {
+    width: 100px;
+    color: #F072A9;
+    font-weight: bold;
+    font-size: 13px;
+    text-shadow: 1px 1px 1px #fff;
+    margin-left: 10px; }
+
+#login input[type=text],
+#login input[type=date],
+#login input[type=number],
+#login input[type=email],
+#login input[type=password] {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border: 1px solid #BEBEBE;
+  padding: 7px;
+  margin: 0px;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none; }

@@ -1,0 +1,364 @@
+#banner{
+    height:810px;
+    text-align: center;
+    position: relative;
+    img{
+        width:100%;
+        height:100%;
+    }
+    //**Inner div with text in banner section 
+    .inner{
+       position: absolute;
+       top:42%;
+       left:0;
+       right:0;
+       color:$white;
+       h1{
+           font-size:84px;
+           text-transform: uppercase;
+           letter-spacing: 40px;
+           margin:0;
+       }
+       .year{
+           font-size: 34px;
+           letter-spacing: 15px;
+       }
+       .simple{
+           font-size: 20px;
+           letter-spacing: 3px;
+       }
+    }
+}
+
+//**Colection coats
+#colection{
+    .colection{
+         margin-top:30px;
+         @include clearfix;
+         overflow: hidden;
+    
+        h1{
+            @include h1-content;
+        }
+        .item{
+            display: inline-block;
+            width: calc(100%/3 - 15px);
+            vertical-align: top;
+            margin-right:15px;
+            &:last-child{
+                margin-right:0;
+            }
+            img{
+                width:100%;
+                height:100%;
+            }
+        }
+    
+        .description{
+            text-align: center;
+            h3{
+                @include h3-content;
+            }
+            .before{
+                margin-right: 5px;
+                text-decoration: line-through;
+            }
+            .now{
+                color:$red;
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+//**SEction with text and list
+#text{
+   .article{
+       margin-top:60px;
+   }
+    h1{
+        font-size:22px;
+        font-family: 'Lato-Light';
+        text-transform: uppercase;
+        letter-spacing: 5px;
+    }
+
+    p{
+        font-size: 16px;
+        line-height:1.8em;
+    }
+    ul{
+        list-style-type: none;
+        li{
+            font-size: 14px;
+            line-height:1.8em;
+        }
+        li:before{
+            content:'-';
+            margin-right: 10px;
+
+        }
+    }
+}
+
+//**Section CARAUSEL
+#carausel{
+    margin-top:70px;
+    h1{
+        @include h1-content;
+    }
+    .carausel-wrap{
+        margin-top: 40px;
+        text-align: center;
+        position: relative;
+
+    }
+    .slides-wrap{
+        width:100%;
+        max-width:1122px;
+        margin:0 auto;
+        @include clearfix;
+    }
+    //**Slider 
+    #slider {
+        width:100%;
+        overflow: hidden;
+
+        .slides{
+            display: block;
+            width:500%;
+            left:-100%;
+            position: relative;
+         }
+         .slide{
+            width:calc(100% / 5);
+            float:left;
+
+            .item{
+                display: inline-block;
+                width: calc(100%/4 - 12px);
+                vertical-align: top;
+                float: left;
+                margin-right:16px;
+                text-align: center;
+                &:last-child{
+                    margin-right:0;
+                }
+                img{
+                    width:100%;
+                    height: 360px;
+                   // height:100%;
+                }
+                .description{
+                    h3{
+                       @include h3-content;
+                    }
+                }
+            }
+        }
+    }
+  
+    #next{
+       position: absolute;
+        left:20px;
+        bottom:50%;
+    }
+    #prev{
+        position: absolute;
+        right:20px;
+        bottom:50%;
+    }
+
+    .slide-btn{
+        border-radius: 50%;
+        border: none;
+        font-size: 28px;
+        line-height: 1.5em;
+        padding-left: 12px;
+        padding-right: 12px;
+        font-weight: bold;
+        background-color:$lightGrey;
+        color:$white;
+        cursor: pointer;
+    }
+
+    .slide-btn:hover, .slide-btn:focus{
+        background-color:$black;
+    }
+}
+
+
+
+@media (max-width: 420px) and (min-width: 320px) {
+    //Banner
+    #banner{
+        height:auto;
+        //**Inner div with text in banner section 
+        .inner{
+           h1{
+               font-size:20px;
+               letter-spacing: 10px;
+           }
+           .year{
+               font-size: 12px;
+               letter-spacing: 8px;
+           }
+           .simple{
+               font-size: 10px;
+               letter-spacing: 2px;
+           }
+        }
+    }
+
+    //**Colection coats
+    #colection{
+        .colection{
+            h1{
+                @include h1-content;
+            }
+            .item{
+                display: inline-block;
+                width: calc(100%/3 - 5px);
+                vertical-align: top;
+                margin-right:4px;
+                &:last-child{
+                    margin-right:0;
+                }
+            }
+        }
+    }
+    //**SEction with text and list
+    #text{
+        ul{
+            padding-left:15px;
+        }
+    }
+
+    //**Section CARAUSEL
+#carausel{
+    .carausel-wrap{
+        margin-top: 40px;
+        text-align: center;
+        position: relative;
+
+    }
+    .slides-wrap{
+        width:100%;
+        max-width:1122px;
+        margin:0 auto;
+        @include clearfix;
+    }
+    //**Slider 
+    #slider {
+        width:100%;
+        overflow: hidden;
+
+        .slides{
+            display: block;
+            width:500%;
+            left:-100%;
+            position: relative;
+         }
+         .slide{
+            width:calc(100% / 5);
+            float:left;
+
+            .item{
+                display: inline-block;
+                width: calc(100%/4 - 12px);
+                vertical-align: top;
+                float: left;
+                margin-right:16px;
+                text-align: center;
+                &:last-child{
+                    margin-right:0;
+                }
+                img{
+                    width:100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+  
+    #next{
+        left:5px;
+        z-index:100;
+    }
+    #prev{
+        right:5px;
+        z-index:100;
+    }
+}
+}
+
+
+//**Responsive
+@media (max-width: 768px) and (min-width: 420px) {
+
+ //Banner
+ #banner{
+    height:auto;
+    //**Inner div with text in banner section 
+    .inner{
+       h1{
+           font-size:30px;
+           letter-spacing: 15px;
+       }
+       .year{
+           font-size: 18px;
+           letter-spacing: 10px;
+       }
+       .simple{
+           font-size: 14px;
+           letter-spacing: 3px;
+       }
+    }
+}
+
+//**Section CARAUSEL
+#carausel{
+    margin-top:70px;
+    h1{
+        @include h1-content;
+    }
+    .carausel-wrap{
+        margin-top: 40px;
+        text-align: center;
+        position: relative;
+
+    }
+    .slides-wrap{
+        width:100%;
+        max-width:1122px;
+        margin:0 auto;
+        @include clearfix;
+    }
+    //**Slider 
+    #slider {
+         .slide{
+            .item{
+                img{
+                    width:100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+  
+    #next{
+        left:10px;
+        z-index: 100;
+    }
+    #prev{
+        right:10px;
+        z-index: 100;
+    }
+}
+}
+
+  
+  
+  
+  
+
